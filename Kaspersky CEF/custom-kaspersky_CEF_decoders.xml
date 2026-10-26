@@ -6,231 +6,231 @@ https://github.com/lasnet/wazuh
 <decoder name="kaspersky">
   <prematch>KasperskyLab</prematch>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>SecurityCenter\|(\.*)\|(\.*)\|(\.*)\|(\.*)\|</regex>
     <order>version,event_typee,trash,codee</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>msg=(\.*) \w+=</regex>
     <order>msg</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>rt=(\.*) \w+=</regex>
     <order>rt</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs9=(\.*) \w+=</regex>
     <order>cs9</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs9Label=(\.*) \w+=</regex>
     <order>cs9Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">dhost=([a-zA-Z-0123456789:]+)</regex>
     <order>dhost</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\Н\а\з\в\а\н\и\е \о\б\ъ\е\к\т\а: ([a-zA-Z_\-.0123456789]+)</regex>
     <order>objectname</order>
 </decoder>
 <!--
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>dhost=(\.*) \w+=</regex>
     <order>dhost</order>
 </decoder>
 -->
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>dst=(\.*) \w+=</regex>
     <order>dst</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs2=(\.*) \w+=</regex>
     <order>cs2</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs2Label=(\.*) \w+=</regex>
     <order>cs2Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs3=(\.*) \w+=</regex>
     <order>cs3</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs3Label=(\.*) \w+=|cs3Label=(\.*)$</regex>
     <order>cs3Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs10=(\.*) \w+=</regex>
     <order>cs10</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs10Label=(\.*) \w+=</regex>
     <order>cs10Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>filePath=(\.*) \w+=</regex>
     <order>filePath</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>duser=(\.*) \w+=|duser=(\.*)$</regex>
     <order>duser</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">(\S+) \S+ \S+\\r\D+\\r\\nSHA256</regex>
     <order>duser</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs1=(\.*) \w+=</regex>
     <order>cs1</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">: (\S+)\\r\D+\\r\\nSHA256</regex>
     <order>filePath</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs1Label=(\.*) \w+=|cs1Label=(\.*)$</regex>
     <order>cs1Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs6=(\.*) \w+=</regex>
     <order>cs6</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs6Label=(\.*) \w+=|cs6Label=(\.*)$</regex>
     <order>cs6Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs7=(\.*) \w+=</regex>
     <order>cs7</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs7Label=(\.*) \w+=|cs7Label=(\.*)$</regex>
     <order>cs7Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs5=(\.*) \w+=</regex>
     <order>cs5</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs5Label=(\.*) \w+=|cs5Label=(\.*)$</regex>
     <order>cs5Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs4=(\.*) \w+=</regex>
     <order>cs4</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>cs4Label=(\.*) \w+=|cs4Label=(\.*)$</regex>
     <order>cs4Label</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>engine=(\.*) \w+=</regex>
     <order>engine</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>method=(\.*) \w+=|method=(\.*)$</regex>
     <order>method</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>deviceNtDomain=(\.*) \w+=|deviceNtDomain=(\.*)$</regex>
     <order>deviceNtDomain</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>request=(\.*) \w+=</regex>
     <order>request</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>fname=(\.*) \w+=</regex>
     <order>fname</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>fileType=(\.*) \w+=|fileType=(\.*)$</regex>
     <order>fileType</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex>act=(\.*) \w+=</regex>
     <order>act</order>
 </decoder>
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\Т\и\п: (\D+)\\</regex>
     <order>ksc.type</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\З\а\п\р\а\ш\и\в\а\е\м\ы\й\ \в\е\б-\а\д\р\е\с: (\S+)\\r\\n</regex>
     <order>ksc.requested_web_address</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\О\п\и\с\а\н\и\е \р\е\з\у\л\ь\т\а\т\а: (\D+) \S+=</regex>
     <order>ksc.description_result</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\Н\а\з\в\а\н\и\е: (\S+)\\r\\n</regex>
     <order>ksc.path_name</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\С\т\е\п\е\н\ь \у\г\р\о\з\ы: ([^\\]+)</regex>
     <order>ksc.degree_of_threat</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\Т\о\ч\н\о\с\т\ь: ([^\\]+)</regex>
     <order>ksc.accuracy</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\Т\и\п \о\б\ъ\е\к\т\а: ([^\\]+)</regex>
     <order>ksc.type_object</order>
 </decoder>
 
-<decoder name="kaspersky-test">
+<decoder name="kaspersky-custom">
     <parent>kaspersky</parent>
     <regex type="pcre2">\П\р\и\ч\и\н\а: ([^\\]+)</regex>
     <order>ksc.type_object_reason</order>
