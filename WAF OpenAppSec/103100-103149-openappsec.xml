@@ -1,3 +1,8 @@
+<!-- 
+=== LASNET ===
+https://github.com/lasnet/wazuh
+Modify it at your will. -->
+
 <group name="WAF,">
   <rule id="103100" level="12">
     <decoded_as>open-appsec</decoded_as>
