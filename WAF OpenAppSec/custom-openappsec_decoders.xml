@@ -1,0 +1,214 @@
+<!-- Modify it at your will. -->
+  <decoder name="open-appsec">
+  <prematch>cpnano-agent</prematch>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">title='([^\"]+)' </regex>
+    <order>open-appsec.title</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">agentId="(\S+)"</regex>
+    <order>open-appsec.agentId</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">serviceName="([^\"]+)"</regex>
+    <order>open-appsec.serviceName</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">assetName="([^\"]+)"</regex>
+    <order>open-appsec.assetName</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">eventSeverity="([^\"]+)"</regex>
+    <order>open-appsec.eventSeverity</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">eventConfidence=="([^\"]+)"</regex>
+    <order>open-appsec.eventConfidence</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">sourceIP="([^\"]+)"</regex>
+    <order>open-appsec.sourceIP</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">sourcePort="([^\"]+)"</regex>
+    <order>open-appsec.sourcePort</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">httpHostName="([^\"]+)"</regex>
+    <order>open-appsec.httpHostName</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">httpMethod="([^\"]+)"</regex>
+    <order>open-appsec.httpMethod</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">httpUriPath="([^\"]+)"</regex>
+    <order>open-appsec.httpUriPath</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">securityAction="([^\"]+)"</regex>
+    <order>open-appsec.securityAction</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">practiceType="([^\"]+)"</regex>
+    <order>open-appsec.practiceType</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">practiceSubType="([^\"]+)"</regex>
+    <order>open-appsec.practiceSubType</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">practiceSubType="([^\"]+)"</regex>
+    <order>open-appsec.practiceSubType</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">practiceSubType="([^\"]+)"</regex>
+    <order>open-appsec.practiceSubType</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">practiceSubType="([^\"]+)"</regex>
+    <order>open-appsec.practiceSubType</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">ruleName="([^\"]+)"</regex>
+    <order>open-appsec.ruleName</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">practiceName="([^\"]+)"</regex>
+    <order>open-appsec.practiceName</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapIncidentType="([^\"]+)"</regex>
+    <order>open-appsec.waapIncidentType</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">matchedSample="([^\"]+)"|matchedSample="([^\"]+)|matchedSample="(\S+)$</regex>
+    <order>open-appsec.matchedSample</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">matchedLocation="([^\"]+)"</regex>
+    <order>open-appsec.matchedLocation</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapFoundIndicators="([^\"]+)"</regex>
+    <order>open-appsec.waapFoundIndicators</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">matchedIndicators="\[([^\n]+)]"|matchedIndicators="([^\"]+)"</regex>
+    <order>open-appsec.matchedIndicators</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapUserReputationScore="([^\"]+)"</regex>
+    <order>open-appsec.waapUserReputationScore</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapUserReputation="([^\"]+)"</regex>
+    <order>open-appsec.waapUserReputation</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapUriFalsePositiveScore="([^\"]+)"</regex>
+    <order>open-appsec.waapUriFalsePositiveScore</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapKeywordsScore="([^\"]+)"</regex>
+    <order>open-appsec.waapKeywordsScore</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">reservedNgenA="([^\"]+)"</regex>
+    <order>open-appsec.reservedNgenA</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapFinalScore="([^\"]+)"</regex>
+    <order>open-appsec.waapFinalScore</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">waapCalculatedThreatLevel="([^\"]+)"</regex>
+    <order>open-appsec.waapCalculatedThreatLevel</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">httpUriQuery="([^\"]+)"</regex>
+    <order>open-appsec.httpUriQuery</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">proxyIP="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"</regex>
+    <order>open-appsec.proxyIP</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">eventMessage="([^\"]+)"</regex>
+    <order>open-appsec.eventMessage</order>
+  </decoder>
+
+  <decoder name="open-appsec-custom">
+    <parent>open-appsec</parent>
+    <regex type="pcre2">issuingEngineVersion="([^\"]+)"</regex>
+    <order>open-appsec.issuingEngineVersion</order>
+  </decoder>

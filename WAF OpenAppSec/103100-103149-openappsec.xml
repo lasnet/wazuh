@@ -1,0 +1,31 @@
+<group name="WAF,">
+  <rule id="103100" level="12">
+    <decoded_as>open-appsec</decoded_as>
+    <description>WAF : [$(open-appsec.httpHostName)] $(open-appsec.securityAction) from $(open-appsec.sourceIP). $(open-appsec.waapIncidentType) [$(open-appsec.matchedSample)]</description>
+  </rule>
+
+  <rule id="103101" level="3">
+    <if_sid>103100</if_sid>
+    <field name="open-appsec.eventSeverity">Info</field>
+    <description>WAF : Info - $(open-appsec.title)</description>
+  </rule>
+
+  <rule id="103102" level="12">
+    <if_sid>103100</if_sid>
+    <match>software update</match>
+    <description>WAF : Update - $(open-appsec.title)</description>
+  </rule>
+
+  <rule id="103103" level="3">
+    <if_sid>103100</if_sid>
+    <field name="open-appsec.title">Updates process report</field>
+    <description>WAF : $(open-appsec.eventMessage)</description>
+  </rule>
+
+  <rule id="103104" level="12">
+    <if_sid>103103</if_sid>
+    <match>Failed during check update</match>
+    <description>WAF : $(open-appsec.eventMessage)</description>
+  </rule>
+
+</group>
