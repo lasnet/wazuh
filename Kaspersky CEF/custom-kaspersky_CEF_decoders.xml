@@ -1,7 +1,7 @@
 <!-- 
 === LASNET ===
 https://github.com/lasnet/wazuh
- -->
+Modify it at your will. -->
 
 <decoder name="kaspersky">
   <prematch>KasperskyLab</prematch>

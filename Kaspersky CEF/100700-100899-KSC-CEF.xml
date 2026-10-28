@@ -1,0 +1,1098 @@
+<!-- 
+=== LASNET ===
+https://github.com/lasnet/wazuh
+Modify it at your will. -->
+
+<group name="KasperskyLab,">
+  <rule id="100700" level="3">
+    <decoded_as>kaspersky</decoded_as>
+    <description>Kaspersky other $(event_typee)</description>
+  </rule>
+    
+  <rule id="100701" level="3">
+    <if_sid>100700</if_sid>
+    <field name="event_typee">KLSRV_EV_LICENSE_CHECK_MORE_110</field>
+    <description>kaspersky: Лицензионное ограничение превышено</description>
+  </rule>  
+            
+  <rule id="100702" level="11">	    
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_VIRUS_OUTBREAK</field>	
+    <description>kaspersky: вирусная атака</description>	 
+  </rule>
+    
+  <rule id="100703" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_HOST_OUT_CONTROL</field>	 
+    <description>kaspersky: $(msg)</description>	  
+  </rule>
+    
+  <rule id="100704" level="9">	    
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_HOST_STATUS_CRITICAL</field>	
+    <description>kaspersky: $(msg)</description>	 
+  </rule>
+    
+  <rule id="100705" level="3">	    
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLSRV_LICENSE_BLACKLISTED</field>	 
+    <description>kaspersky: Файл ключа добавлен в запрещенный список</description>	  
+  </rule>
+    
+  <rule id="100706" level="3">	    
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EV_LICENSE_SRV_LIMITED_MODE</field>	 
+    <description>kaspersky: Режим ограниченной функциональности</description>	 
+  </rule>
+    
+  <rule id="100707" level="3">	    
+    <if_sid>100700</if_sid>	
+    <field name="event_typee">KLSRV_EV_LICENSE_SRV_EXPIRE_SOON</field>	 
+    <description>kaspersky: Срок действия лицензии скоро истекает</description>	 
+  </rule>
+    
+  <rule id="100708" level="3">	    
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_CERTIFICATE_EXPIRED</field>	 
+    <description>kaspersky: Срок действия сертификата истек</description>
+  </rule>
+    
+  <rule id="100709" level="3">	    
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLSRV_SEAMLESS_UPDATE_REVOKED</field>	 
+    <description>kaspersky: Обновления модулей программ "Лаборатории Касперского" отозваны</description>	
+  </rule>			
+				
+  <rule id="100710" level="3">	    
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLSRV_RUNTIME_ERROR</field>	
+    <description>kaspersky: Ошибка времени выполнения</description>
+  </rule>
+    
+  <rule id="100711" level="3">	    
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLSRV_INVLICPROD_EXCEDED</field>	  
+    <description>kaspersky: Для одной из групп лицензионных программ превышено ограничение числа установок</description>	  
+  </rule>
+    
+  <rule id="100712" level="3">	   
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_KLCLOUD_SCAN_ERROR</field>	
+    <description>kaspersky: Не удалось выполнить опрос облачного сегмента</description>	
+  </rule>
+    
+  <rule id="100713" level="3">	   
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_UPD_REPL_FAIL</field>	 
+    <description>kaspersky: Не удалось выполнить копирование обновлений в заданную папку</description>	 
+  </rule>
+    
+  <rule id="100714" level="12">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLSRV_DISK_FULL</field>
+    <description>kaspersky: Нет свободного места на диске</description>	
+  </rule>
+    
+  <rule id="100715" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLSRV_SHARED_FOLDER_UNAVAILABLE</field>	  
+    <description>kaspersky: Общая папка недоступна </description>	 
+  </rule>
+    
+  <rule id="100716" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLSRV_DATABASE_UNAVAILABLE</field>
+    <description>kaspersky: База данных Сервера администрирования недоступна</description>	  
+  </rule>
+    
+  <rule id="100717" level="12">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_DATABASE_FULL</field>	
+    <description>kaspersky: Недостаточно места в базе данных Сервера администрирования  </description>	    
+  </rule>
+								
+  <rule id="100718" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EV_LICENSE_CHECK_100_110</field>	  
+    <description>kaspersky: Лицензионное ограничение превышено</description>	    
+  </rule>
+    
+  <rule id="100719" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EVENT_HOSTS_NOT_VISIBLE</field>	 
+    <description>kaspersky: $(msg)</description>	  
+  </rule>
+    
+  <rule id="100720" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EVENT_HOSTS_CONFLICT</field>
+    <description>kaspersky: $(msg)</description>	
+  </rule>
+    
+  <rule id="100721" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_HOST_STATUS_WARNING</field>	 
+    <description>kaspersky: $(msg)</description>
+  </rule>
+    
+  <rule id="100722" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_INVLICPROD_FILLED</field>	 
+    <description>kaspersky: Для одной из групп лицензионных программ скоро будет превышено ограничение числа установок</description>	  
+  </rule>
+    
+  <rule id="100723" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_CERTIFICATE_REQUESTED</field>	  
+    <description>kaspersky: Сертификат запрошен </description>	  
+  </rule>
+    
+  <rule id="100724" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_CERTIFICATE_REMOVED</field>	 
+    <description>kaspersky: Сертификат удален </description>	 
+  </rule>
+    
+  <rule id="100725" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_APN_CERTIFICATE_EXPIRED</field>	 
+    <description>kaspersky: Срок действия APNs сертификата истек </description>	
+  </rule>
+    
+  <rule id="100726" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_APN_CERTIFICATE_EXPIRES_SOON</field>
+    <description>kaspersky: Срок действия APNs сертификата истекает </description>	 
+  </rule>
+    
+  <rule id="100727" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_GCM_DEVICE_ERROR</field>	
+    <description>kaspersky: Не удалось отправить FCM-сообщение на мобильное устройство</description>	   
+  </rule>
+    
+  <rule id="100728" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_GCM_HTTP_ERROR</field>	   
+    <description>kaspersky: HTTP-ошибка при отправке FCM-сообщения на FCM-сервер</description>	   
+  </rule>
+    
+  <rule id="100729" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_GCM_GENERAL_ERROR</field>	 
+    <description>kaspersky: Не удалось отправить FCM-сообщение на FCM-сервер</description>	  
+  </rule>
+    
+  <rule id="100730" level="12">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_NO_SPACE_ON_VOLUMES</field>	   
+    <description>kaspersky: Мало свободного места на жестком диске</description>	 
+  </rule>
+    
+  <rule id="100731" level="12">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_NO_SPACE_IN_DATABASE</field>	
+    <description>kaspersky: Мало свободного места в базе Сервера администрирования</description>	  
+  </rule>
+    
+  <rule id="100732" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EV_SLAVE_SRV_DISCONNECTED</field>
+    <description>kaspersky: Разорвано соединение с подчиненным Сервером администрирования</description>	 
+  </rule>
+    
+  <rule id="100733" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EV_MASTER_SRV_DISCONNECTED</field>	
+    <description>kaspersky: Разорвано соединение с главным Сервером администрирования</description>
+  </rule>
+    
+  <rule id="100734" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_SEAMLESS_UPDATE_REGISTERED</field>	 
+    <description>kaspersky: Зарегистрированы новые обновления модулей программ "Лаборатории Касперского"</description>	  
+  </rule>
+    
+  <rule id="100735" level="3">	  
+    <if_sid>100700</if_sid>	    
+    <field name="event_typee">KLSRV_EVP_DB_TRUNCATING</field>	  
+    <description>kaspersky: Началось удаление событий из базы данных, так как превышено ограничение числа событий</description>
+  </rule>
+    
+  <rule id="100736" level="3">	  
+    <if_sid>100700</if_sid>	    
+    <field name="event_typee">KLSRV_EVP_DB_TRUNCATED</field>	
+    <description>kaspersky: Удалены события из базы данных, так как превышено ограничение числа событий</description>	  
+  </rule>		
+				
+  <rule id="100737" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EV_LICENSE_CHECK_90</field>	
+    <description>kaspersky: Лицензионный ключ использован более чем на 90%</description>
+  </rule>
+    
+  <!-- OFF -->
+  <rule id="100738" level="3"> 	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EVENT_HOSTS_NEW_DETECTED</field>
+    <description>kaspersky: Обнаружено новое устройство</description>	
+    <options>no_log</options>
+  </rule>
+    
+  <rule id="100739" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EVENT_HOSTS_NEW_REDIRECTED</field>
+    <description>kaspersky: Устройство автоматически добавлено в группу</description>	
+  </rule>
+    
+  <rule id="100740" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_INVISIBLE_HOSTS_REMOVED</field>	
+    <description>kaspersky: Устройство удалено из группы: долгое отсутствие активности в сети</description>	 
+  </rule>
+    
+  <rule id="100741" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_INVLICPROD_EXPIRED_SOON</field>	  
+    <description>kaspersky: Для одной из групп лицензионных программ число разрешенных установок исчерпано более чем на 95%</description>	   
+  </rule>
+    
+  <rule id="100742" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLSRV_APS_FILE_APPEARED</field>	 
+    <description>kaspersky: Появились файлы для отправки на анализ в "Лабораторию Касперского"</description>
+  </rule>
+    
+  <rule id="100743" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLSRV_GCM_DEVICE_REGID_CHANGED</field>	
+    <description>kaspersky: Идентификатор экземпляра FCM мобильного устройства изменен</description>
+  </rule>
+    
+  <rule id="100744" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_UPD_REPL_OK</field>	 
+    <description>kaspersky: Обновления успешно скопированы в заданную папку</description>	
+  </rule>
+    
+  <rule id="100745" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_EV_SLAVE_SRV_CONNECTED</field>	 
+    <description>kaspersky: Установлено соединение с подчиненным Сервером администрирования</description>	 
+  </rule>
+    
+  <rule id="100746" level="3">	  
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLSRV_HOST_MOVED_WITH_RULE_EX</field>	
+    <description>kaspersky: Устройство было автоматически перемещено с помощью правила</description>	
+  </rule>
+    
+  <rule id="100747" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLSRV_UPD_BASES_UPDATED</field>	 
+    <description>kaspersky: $(msg)</description>	   
+  </rule>
+    
+  <rule id="100748" level="3">	  
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLAUD_EV_SERVERCONNECT</field>	
+    <description>kaspersky: Аудит: $(msg)</description>	 
+  </rule>
+    
+  <rule id="100749" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLAUD_EV_OBJECTMODIFY</field>	 
+    <description>kaspersky: Аудит: Изменение объекта</description>	  
+  </rule>
+    
+  <rule id="100750" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLAUD_EV_TASK_STATE_CHANGED</field>	
+    <description>kaspersky: Аудит: Изменение статуса объекта</description>	  
+  </rule>
+    
+  <rule id="100751" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLAUD_EV_ADMGROUP_CHANGED</field>	 
+    <description>kaspersky: Аудит: Изменение параметров группы</description>	  
+  </rule>
+    
+  <rule id="100752" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLAUD_EV_SERVERDISCONNECT</field>	  
+    <description>kaspersky: Аудит: Подключение к Серверу администрирования было прервано</description>	 
+  </rule>
+    
+  <rule id="100753" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLAUD_EV_OBJECTPROPMODIFIED</field>	 
+    <description>kaspersky: Аудит: Свойства объекта были изменены</description>	
+  </rule>
+    
+  <rule id="100754" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLAUD_EV_OBJECTACLMODIFIED</field>	
+    <description>kaspersky: Аудит: Права пользователя были изменены</description>	
+  </rule>
+
+  <rule id="100755" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_PATCH_INSTALL_ERROR</field>	  
+    <description>kaspersky: Ошибка при установке обновления</description>
+  </rule>
+    
+  <rule id="100756" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_3P_PATCH_INSTALL_ERROR</field>	
+    <description>kaspersky: Не удалось установить обновление стороннего производителя</description>	   
+  </rule>
+    
+  <rule id="100757" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_WUA_INSTALL_ERROR</field>
+    <description>kaspersky: Не удалось установить обновления Центра обновления</description>
+  </rule>
+				
+  <rule id="100758" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_PATCH_INSTALL_WARNING</field>	  
+    <description>kaspersky: Возвращено предупреждение во время установки обновления программных модулей</description>	   
+  </rule>
+    
+  <rule id="100759" level="3">
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_3P_PATCH_INSTALL_WARNING</field>	  
+    <description>kaspersky: Установка обновления стороннего ПО завершена с предупреждение м</description>	 
+  </rule>
+    
+  <rule id="100760" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_3P_PATCH_INSTALL_SLIPPED</field>	 
+    <description>kaspersky: Установка обновления стороннего программного обеспечения отложена</description>	
+  </rule>
+    
+  <rule id="100761" level="12">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_APP_INCIDENT_OCCURED</field>	  
+    <description>kaspersky: Произошел инцидент </description>	 
+  </rule>
+    
+  <rule id="100762" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KSNPROXY_STARTED_CON_CHK_FAILED</field>
+    <description>kaspersky: Прокси сервер KSN был запущен. Не удалось проверить доступность KSN</description>	 
+  </rule> 
+				
+  <rule id="100763" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_PATCH_INSTALLED_SUCCESSFULLY</field>	    
+    <description>kaspersky: Обновление программных модулей успешно установлено</description>	
+  </rule>
+    
+  <rule id="100764" level="3">
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLNAG_EV_PATCH_INSTALL_STARTING</field>	 
+    <description>kaspersky: Запущена установка обновления программных модулей</description>	
+  </rule>
+    
+  <rule id="100765" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_INV_APP_INSTALLED</field>	 
+    <description>kaspersky: $(dhost) $(msg)</description>	  
+  </rule>
+    
+  <rule id="100766" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_INV_APP_UNINSTALLED</field>	 
+    <description>kaspersky: Программа удалена</description>	  
+  </rule>
+    
+  <rule id="100767" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_INV_OBS_APP_INSTALLED</field>	
+    <description>kaspersky: Установлена наблюдаемая программа</description>
+  </rule>
+    
+  <rule id="100768" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_INV_OBS_APP_UNINSTALLED</field>	  
+    <description>kaspersky: Удалена наблюдаемая программа</description>	  
+  </rule>
+    
+  <rule id="100769" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLNAG_EV_INV_CMPTR_APP_INSTALLED</field>	 
+    <description>kaspersky: Установлена сторонняя программа</description>	  
+  </rule>
+    
+  <rule id="100770" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_DEVICE_ARRIVAL</field>	  
+    <description>kaspersky: $(dhost) $(msg)</description>	  
+  </rule>
+    
+  <rule id="100771" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_DEVICE_REMOVE</field>	
+    <description>kaspersky: $(dhost) $(msg)</description>	 
+  </rule>
+    
+  <rule id="100772" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">KLNAG_EV_NAC_DEVICE_DISCOVERED</field>
+    <description>kaspersky: Обнаружено новое устройство</description>	  
+  </rule>
+    
+  <rule id="100773" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_NAC_HOST_AUTHORIZED</field>	  
+    <description>kaspersky: Устройство авторизовано</description>	  
+  </rule>
+    
+  <rule id="100774" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLUSRLOG_EV_FILE_READ</field>	 
+    <description>kaspersky: Совместный доступ к рабочему столу Windows: файл был прочитан</description>
+  </rule>
+    
+  <rule id="100775" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLUSRLOG_EV_FILE_MODIFIED</field>	  
+    <description>kaspersky: Совместный доступ к рабочему столу Windows: файл был изменен</description>	 
+  </rule>
+    
+  <rule id="100776" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLUSRLOG_EV_PROCESS_LAUNCHED</field>	  
+    <description>kaspersky: Совместный доступ к рабочему столу Windows: программа была запущена</description>	 
+  </rule>
+    
+  <rule id="100777" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLUSRLOG_EV_WDS_BEGIN</field>	  
+    <description>kaspersky: Совместный доступ к рабочему столу Windows: предоставлен</description>	  
+  </rule>
+    
+  <rule id="100778" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLUSRLOG_EV_WDS_END</field>	   
+    <description>kaspersky: Совместный доступ к рабочему столу Windows: завершен</description>	   
+  </rule>
+    
+  <rule id="100779" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLNAG_EV_3P_PATCH_INSTALLED_SUCCESSFULLY</field>	  
+    <description>kaspersky: Обновление для программ стороннего производителя установлено успешно</description>	 
+  </rule>
+    
+  <rule id="100780" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KLNAG_EV_3P_PATCH_INSTALL_STARTING</field>	 
+    <description>kaspersky: Запущена установка обновления стороннего ПО</description>	 
+  </rule>
+    
+  <rule id="100781" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KSNPROXY_STARTED_CON_CHK_OK–Прокси</field>
+    <description>kaspersky: Сервер KSN был запущен. Проверка доступности KSN прошла успешно</description>	  
+  </rule>
+    
+  <rule id="100782" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">KSNPROXY_STOPPED</field>	   
+    <description>kaspersky: Прокси сервер KSN остановлен</description>	  
+  </rule>			
+				
+  <rule id="100783" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">PROFILELIST_COMMAND_FAILED</field>	  
+    <description>kaspersky: Не удалось запросить список профилей</description>	 
+  </rule>
+    
+  <rule id="100784" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">INSTALLPROFILE_COMMAND_FAILED</field>	
+    <description>kaspersky: Не удалось установить профиль</description>	 
+  </rule>
+    
+  <rule id="100785" level="3">
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">REMOVEPROFILE_COMMAND_FAILED</field>	
+    <description>kaspersky: Не удалось удалить профиль</description>	 
+  </rule>
+    
+  <rule id="100786" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">PROVISIONINGPROFILELIST_COMMAND_FAILED</field>
+    <description>kaspersky: Не удалось запросить список provisioning-профилей</description>
+  </rule>
+    
+  <rule id="100787" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">INSTALLPROVISIONINGPROFILE_COMMAND_FAILED</field>	 
+    <description>kaspersky: Не удалось установить provisioning-профиль</description>	  
+  </rule>
+    
+  <rule id="100788" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">REMOVEPROVISIONINGPROFILE_COMMAND_FAILED</field>	  
+    <description>kaspersky: Не удалось удалить provisioning-профиль</description>
+  </rule>
+    
+  <rule id="100789" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">CERTIFICATELIST_COMMAND_FAILED</field>
+    <description>kaspersky: Не удалось запросить список цифровых сертификатов</description>	 
+  </rule>
+    
+  <rule id="100790" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">INSTALLEDAPPLICATIONLIST_COMMAND_FAILED</field>	 
+    <description>kaspersky: Не удалось запросить список установленных программ</description>	 
+  </rule>
+    
+  <rule id="100791" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">DEVICEINFORMATION_COMMAND_FAILED</field>	  
+    <description>kaspersky: Не удалось запросить общую информацию о мобильном устройстве</description>
+  </rule>
+    
+  <rule id="100792" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">SECURITYINFO_COMMAND_FAILED</field>	 
+    <description>kaspersky: Не удалось запросить информацию о безопасности</description>	  
+  </rule>
+    
+  <rule id="100793" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">DEVICELOCK_COMMAND_FAILED</field>	 
+    <description>kaspersky: Не удалось заблокировать мобильное устройство</description>	 
+  </rule>
+    
+  <rule id="100794" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">CLEARPASSCODE_COMMAND_FAILED</field>	
+    <description>kaspersky: Не удалось очистить пароль</description>	  
+  </rule>
+    
+  <rule id="100795" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">ERASEDEVICE_COMMAND_FAILED</field>
+    <description>kaspersky: Не удалось удалить данные мобильного устройства</description>	   
+  </rule>
+    
+  <rule id="100796" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">INSTALLAPPLICATION_COMMAND_FAILED</field>	  
+    <description>kaspersky: Не удалось установить приложение</description>	 
+  </rule>
+    
+  <rule id="100797" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">APPLYREDEMPTIONCODE_COMMAND_FAILED</field>
+    <description>kaspersky: Не удалось установить код погашения для приложения</description>	  
+  </rule>
+    
+  <rule id="100798" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">MANAGEDAPPLICATIONLIST_COMMAND_FAILED</field>	  
+    <description>kaspersky: Не удалось запросить список управляемых приложений</description>	 
+  </rule>
+    
+  <rule id="100799" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">REMOVEAPPLICATION_COMMAND_FAILED</field>	  
+    <description>kaspersky: Не удалось удалить управляемое приложение</description>
+  </rule>
+    
+  <rule id="100800" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">SETROAMINGSETTINGS_COMMAND_FAILED</field>	  
+    <description>kaspersky: Параметры роуминга отклонены</description>	  
+  </rule>
+    
+  <rule id="100801" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">PRODUCT_FAILURE</field>	
+    <description>kaspersky: Произошла ошибка в работе приложения</description>	  
+  </rule>
+    
+  <rule id="100802" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">MALFORMED_COMMAND</field>	   
+    <description>kaspersky: Результат выполнения команды содержит неверные данные</description>	
+  </rule>
+    
+  <rule id="100803" level="3">
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">SEND_PUSH_NOTIFICATION_FAILED</field>	  
+    <description>kaspersky: Не удалось отправить уведомление (Push Notification)</description>	   
+  </rule>
+    
+  <rule id="100804" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">SEND_COMMAND_FAILED</field>	
+    <description>kaspersky: Не удалось отправить команду</description>	  
+  </rule>
+    
+  <rule id="100805" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">DEVICE_NOT_FOUND</field>	 
+    <description>kaspersky: Устройство не найдено</description>	
+  </rule>  
+				
+  <rule id="100806" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">INACTICE_DEVICE_TRY_CONNECTED</field>	  
+    <description>kaspersky: Попытка подключения заблокированного мобильного устройства</description>	 
+  </rule>
+    
+  <rule id="100807" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">MDM_PROFILE_WAS_REMOVED</field>
+    <description>kaspersky: Профиль удален</description>	
+  </rule>
+    
+  <rule id="100808" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">CLIENT_CERT_ALREADY_IN_USE</field>	
+    <description>kaspersky: Попытка повторного использования клиентского сертификата</description>
+  </rule>
+    
+  <rule id="100809" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">FOUND_INACTIVE_DEVICE</field>	
+    <description>kaspersky: Обнаружено неактивное устройство</description>	
+  </rule>
+    
+  <rule id="100810" level="3">	  
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">NEED_REDEMPTION_CODE</field>	   
+    <description>kaspersky: Требуется код погашения</description>	  
+  </rule>
+    
+  <rule id="100811" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">UMDM_PROFILE_WAS_REMOVED</field>	  
+    <description>kaspersky: Профиль, входящий в состав политики, удален с устройства</description>	  
+  </rule>			
+				
+  <rule id="100812" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">NEW_DEVICE_CONNECTED</field>	  
+    <description>kaspersky: Подключено новое мобильное устройство</description>	   
+  </rule>
+    
+  <rule id="100813" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">PROFILELIST_COMMAND_SUCCESSFULL</field>
+    <description>kaspersky:Запрос списка профилей выполнен успешно</description>	    
+  </rule>
+    
+  <rule id="100814" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">INSTALLPROFILE_COMMAND_SUCCESSFULL</field>
+    <description>kaspersky: Установка профиля выполнена успешно</description>	
+  </rule>
+    
+  <rule id="100815" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">REMOVEPROFILE_COMMAND_SUCCESSFULL</field>	  
+    <description>kaspersky: Удаление профиля выполнено успешно</description>	  
+  </rule>
+    
+  <rule id="100816" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">PROVISIONINGPROFILELIST_COMMAND_SUCCESSFULL</field>	
+    <description>kaspersky: Запрос списка provisioningпрофилей выполнен успешно</description>
+  </rule>
+    
+  <rule id="100817" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">INSTALLPROVISIONINGPROFILE_COMMAND_SUCCESSFULL</field>	
+    <description>kaspersky: Установка provisioningпрофиля выполнена успешно</description>	 
+  </rule>
+    
+  <rule id="100818" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">REMOVEPROVISIONINGPROFILE_COMMAND_SUCCESSFULL</field>	 
+    <description>kaspersky: Удаление provisioningпрофиля выполнено успешно</description>	  
+  </rule>
+    
+  <rule id="100819" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">CERTIFICATELIST_COMMAND_SUCCESSFULL</field>
+    <description>kaspersky: Запрос списка цифровых сертификатов выполнен успешно</description>
+  </rule>
+    
+  <rule id="100820" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">INSTALLEDAPPLICATIONLIST_COMMAND_SUCCESSFULL</field>	 
+    <description>kaspersky: Запрос списка установленных программ выполнен успешно</description>	 
+  </rule>
+    
+  <rule id="100821" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">DEVICEINFORMATION_COMMAND_SUCCESSFULL</field>	  
+    <description>kaspersky: Запрос общей информации о мобильном устройстве выполнен успешно</description>	 
+  </rule>
+    
+  <rule id="100822" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">SECURITYINFO_COMMAND_SUCCESSFULL</field>	
+    <description>kaspersky: Запрос информации о безопасности выполнен успешно</description>	  
+  </rule>
+    
+  <rule id="100823" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">DEVICELOCK_COMMAND_SUCCESSFULL</field>
+    <description>kaspersky: Мобильное устройство успешно заблокировано</description>	  
+  </rule>
+    
+  <rule id="100824" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">CLEARPASSCODE_COMMAND_SUCCESSFULL</field>	 
+    <description>kaspersky: Очистка пароля выполнена успешно</description>	
+  </rule>
+    
+  <rule id="100825" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">ERASEDEVICE_COMMAND_SUCCESSFULL</field>	
+    <description>kaspersky: Данные удалены с мобильного устройства</description>	  
+  </rule>
+    
+  <rule id="100826" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">INSTALLAPPLICATION_COMMAND_SUCCESSFULL</field>	
+    <description>kaspersky: Установка приложения выполнена успешно</description>	  
+  </rule>
+    
+  <rule id="100827" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">APPLYREDEMPTIONCODE_COMMAND_SUCCESSFULL</field>	 
+    <description>kaspersky: Установка кода погашения для приложения прошла успешно</description>	   
+  </rule>
+    
+  <rule id="100828" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">MANAGEDAPPLICATIONLIST_COMMAND_SUCCESSFULL</field>
+    <description>kaspersky: Запрос списка управляемы х приложений выполнен успешно</description>	  
+  </rule>
+    
+  <rule id="100829" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">REMOVEAPPLICATION_COMMAND_SUCCESSFULL</field>	  
+    <description>kaspersky: Удаление управляемого приложения выполнено успешно</description>	 
+  </rule>
+        
+  <rule id="100830" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">SETROAMINGSETTINGS_COMMAND_SUCCESSFUL</field>	  
+    <description>kaspersky: Параметры роуминга применены успешно</description>	
+  </rule>			
+				
+  <rule id="100831" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">WIPE_FAILED</field>	  
+    <description>kaspersky: Не удалось удалить данные мобильного устройства</description>	 
+  </rule>
+    
+  <rule id="100832" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">DEVICE_REMOVE_FAILED</field>	
+    <description>kaspersky: Не удалось удалить информацию о подключении мобильного устройства к почтовому ящику</description>	 
+  </rule>
+    
+  <rule id="100833" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">POLICY_APPLY_FAILED</field>	
+    <description>kaspersky: Не удалось применить к почтовому ящику политику ActiveSync</description>	 
+  </rule>
+
+  <rule id="100834" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">CHANGE_ACTIVE_SYNC_STATE_FAILED</field>	
+    <description>kaspersky: Не удалось изменить состояние функциональности ActiveSync</description>	 
+  </rule>	
+  
+  <rule id="100835" level="12">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_VIRUS_FOUND</field>	 
+    <field name="cs1" type="pcre2" negate="yes">^not-a-virus*</field>
+    <field name="trash" type="pcre2" negate="yes">^Обнаружено легальное приложение*</field>
+    <description>kaspersky: $(dhost) Обнаружен вредоносный объект $(sc1)$(filePath)</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="100838" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">WIPE_SUCCESSFULL</field>	  
+    <description>kaspersky: Данные удалены с мобильного устройства</description>	  
+  </rule>
+    
+  <rule id="100839" level="3">	
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_OBJECT_BLOCKED</field>	
+    <description>kaspersky: $(dhost) Загрузка объекта запрещена. [$(filePath)]</description>	 
+  </rule>
+    
+  <rule id="100840" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_VIRUS_FOUND_AND_BLOCKED</field>	 
+    <description>kaspersky: Заблокирована опасная ссылка (Защита от веб-угроз)</description>	    
+  </rule>
+    
+  <rule id="100841" level="3">
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_WEB_URL_BLOCKED</field>	 
+    <description>kaspersky: $(dhost) Запрещен доступ к $(ksc.requested_web_address). $(cs10)</description>	  
+  </rule>
+    
+  <rule id="100842" level="12">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_VIRUS_FOUND_BY_KSN</field>	
+    <description>kaspersky: $(dhost) Обнаружен вредоносный объект $(filePath)</description>
+  </rule>
+    
+  <rule id="100843" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_VIRUS_FOUND_AND_REPORTED</field>	 
+    <description>kaspersky: Открыта опасная ссылка (Защита от веб-угроз)</description>
+  </rule>
+    
+  <rule id="100844" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_VIRUS_FOUND_AND_PASSED</field>	
+    <description>kaspersky: Обнаружена ранее открытая опасная ссылка (Защита от веб-угроз)</description>	
+  </rule>
+    
+  <rule id="100845" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_SUSPICIOUS_OBJECT_FOUND</field>	 
+    <description>kaspersky: Обнаружена легальная программа, которая может быть использована злоумышленниками для нанесения вреда компьютеру или данным пользователя</description>	  
+  </rule>
+    
+  <rule id="100846" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_OBJECT_CURED</field>	  
+    <description>kaspersky: $(dhost) Объект вылечен: $(filePath)</description>
+  </rule>
+    
+  <rule id="100847" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_OBJECT_DELETED</field>	
+    <description>kaspersky: $(dhost) Удалён обьект $(filePath)</description>	  
+  </rule>
+    
+  <rule id="100848" level="11">
+    <if_sid>100700</if_sid>
+    <field name="event_typee">GNRL_EV_OBJECT_NOTCURED</field>
+    <description>kaspersky: $(dhost) Лечение невозможно: $(filePath)</description>
+  </rule>
+    
+  <rule id="100849" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_OBJECT_REPORTED</field>	 
+    <description>kaspersky: Объект не обработан (Защита от почтовых угроз) Результат проверки объекта передан стороннему приложению (AMSI-защита)</description>	
+  </rule>
+    
+  <rule id="100850" level="3">	 
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_PASSWD_ARCHIVE_FOUND</field>	  
+    <description>kaspersky: Обнаружен защищенный паролем архив</description>	 
+  </rule>
+    
+  <rule id="100851" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_ATTACK_DETECTED</field>	  
+    <description>kaspersky: Обнаружена сетевая атака (Защита от сетевых угроз)</description>	
+  </rule>
+    
+  <rule id="100852" level="3">
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_LICENSE_EXPIRATION</field>	
+    <description>kaspersky: $(dhost) Нарушено Лицензионное соглашение. $(ksc.description_result)</description>	 
+  </rule>
+    
+  <rule id="100853" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_APPLICATION_LAUNCHED</field>
+    <description>kaspersky: Запуск программы разрешен (Контроль программ)</description>
+  </rule>
+    
+  <rule id="100854" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_APPLICATION_LAUNCH_DENIED</field>	  
+    <description>kaspersky: $(dhost) Запуск программы $(objectname) запрещен (Контроль программ)</description>
+  </rule>
+    
+  <rule id="100855" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_APP_LAUNCH_TESTED_DENIED</field>
+    <description>kaspersky: Запуск программы запрещен в тестовом режиме (Контроль программ)</description>	  
+  </rule>
+    
+  <rule id="100856" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_APP_LAUNCH_TESTED_ALLOW</field>
+    <description>kaspersky: Запуск программы разрешен в тестовом режиме (Контроль программ)</description>	   
+  </rule>
+    
+  <rule id="100857" level="3">
+    <if_sid>100700</if_sid>	 
+    <field name="event_typee">GNRL_EV_AC_USER_REQUEST</field>	  
+    <description>kaspersky: $(dhost) Сообщение администратору о запрете запуска программы (Контроль программ)</description>	
+  </rule>
+    
+  <rule id="100858" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_WEB_URL_BLOCKED_BY_KSN</field>	 
+    <description>kaspersky: Доступ запрещен KSN (Веб-Контроль)</description>
+  </rule>
+    
+  <rule id="100859" level="3">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_WEB_URL_WARNING</field>	  
+    <description>kaspersky: Предупреждение о нежелательном содержимом (Веб-Контроль)</description>
+  </rule>
+    
+  <rule id="100860" level="3">	  
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_WC_USER_REQUEST</field>	  
+    <description>kaspersky: Сообщение администратору о запрете доступа к веб-странице (Веб-Контроль)</description>
+  </rule>
+    
+  <rule id="100861" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_DC_USER_REQUEST</field>	  
+    <description>kaspersky: $(dhost) Сообщение администратору о запрете доступа к устройству (Контроль устройств)</description>	
+  </rule>
+    
+  <rule id="100862" level="3">	   
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_DEVCTRL_DEV_PLUGGED</field>	 
+    <description>kaspersky: $(dhost) Устройство подключено (Контроль устройств) $(cs9)</description>	 
+  </rule>
+    
+  <rule id="100863" level="3">	  
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_DEVCTRL_DEV_UNPLUGGED</field>	   
+    <description>kaspersky: $(dhost) Устройство подключено (Контроль устройств) $(cs9)</description>	
+  </rule>
+    
+  <rule id="100864" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_DEVCTRL_DEV_PLUG_DENIED</field>	 
+    <description>kaspersky: $(dhost) Подключенное устройство заблокировано (Контроль устройств). Операция с устройством запрещена $(cs9)</description>	  
+  </rule>
+    
+  <rule id="100865" level="3">	 
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_ADSEC_DETECT</field>	  
+    <description>kaspersky: Действие процесса заблокировано / Действие процесса пропущено (Адаптивный контроль аномалий)</description>
+  </rule>
+    
+  <rule id="100866" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_ADSEC_USER_REQUEST</field>	
+    <description>kaspersky: Сообщение администратору о запрете действия программы (Адаптивный контроль аномалий)</description>	
+  </rule>
+    
+  <rule id="100867" level="3">	
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_ENCRYPTION_DATAACCESS_VIOLATION</field>
+    <description>kaspersky: Заблокирован доступ к файлу</description>	  
+  </rule>
+    
+  <rule id="100868" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_ENCRYPTION_ERROR</field>	 
+    <description>kaspersky: Ошибка шифрования/расшифровки файла</description>
+  </rule>
+    
+  <rule id="100869" level="3">	 
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_USB_FILE_OPERATION</field>
+    <description>kaspersky: Выполнена операция с файлом (Контроль устройств)</description>	
+  </rule>
+    
+  <rule id="100870" level="3">	  
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">GNRL_EV_HST_CMD_RESULT</field>	
+    <description>kaspersky: Результаты запуска задачи</description>	
+  </rule>
+    
+  <rule id="100871" level="3">	  
+    <if_sid>100700</if_sid>	   
+    <field name="event_typee">KLPRCI_TaskState</field>	
+    <description>kaspersky: $(dhost) Cостояние выполнения задачи [$(cs10)] изменилось на $(trash)</description>	
+  </rule>  
+
+  <rule id="100875" level="3">	
+    <if_sid>100871</if_sid>	 
+    <field name="eventy" type="pcre2">Выполняется</field>
+    <description>kaspersky: Cостояние выполнения задачи изменилось Выполняется</description>
+  </rule>
+    
+  <rule id="100876" level="3">
+    <if_sid>100871</if_sid>
+    <field name="eventy" type="pcre2">Завершена успешно</field>
+    <description>kaspersky: Cостояние выполнения задачи изменилось Завершена успешно</description>
+  </rule>
+
+  <rule id="100877" level="3">
+    <if_sid>100871</if_sid>
+    <field name="eventy" type="pcre2">Завершена с предупреждением</field>
+    <description>kaspersky: Выполнения задачи Завершена с предупреждением</description>
+  </rule>
+
+  <rule id="100878" level="3">
+    <if_sid>100871</if_sid>
+    <field name="eventy" type="pcre2">Сбой</field>
+    <description>kaspersky: Сбой выполнения задачи</description>
+  </rule>
+    
+  <rule id="100879" level="3">
+    <if_sid>100878</if_sid>
+    <field name="msg" type="pcre2">Не найден источник обновлений</field>
+    <description>kaspersky: Сбой выполнения задачи - Не найден источник обновлений</description>
+  </rule>
+    
+  <rule id="100880" level="12">	
+    <if_sid>100704</if_sid>
+    <match type="pcre2">: Базы устарели.</match>	 
+    <description>kaspersky: $(msg)</description>
+  </rule> 
+
+  <rule id="100881" level="11">
+    <if_sid>100700</if_sid>
+    <field name="event_typee">GNRL_EV_VIRUS_FOUND</field>
+    <description>kaspersky: $(dhost) Обнаружен вредоносный объект $(cs1) $(ksc.type_object)</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="100885" level="5">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_PTOTECTION_LEVEL_CHANGED</field>	
+    <description>kaspersky: $(dhost) $(trash)</description>	    
+  </rule>
+
+  <rule id="100886" level="7">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_APPLICATION_WAS_RESTARTED</field>	
+    <description>kaspersky: $(dhost) $(trash)</description>	    
+  </rule>
+
+  <rule id="100887" level="12">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_ANTIVIRAL_BASES_EXPIRED</field>	
+    <description>kaspersky: $(dhost) $(msg)</description>	    
+  </rule>
+
+  <rule id="100888" level="7">	
+    <if_sid>100700</if_sid>	  
+    <field name="event_typee">GNRL_EV_INTERNAL_ERROR</field>	
+    <description>kaspersky: $(dhost) $(trash)</description>	    
+  </rule>
+
+</group>
